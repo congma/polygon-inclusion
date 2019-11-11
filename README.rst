@@ -34,7 +34,7 @@ A self-intersecting polygon.
 >>> print(poly.winding_number(np.array((0.0, 0.0))))
 2
 >>> print(poly.contains(np.array(((0.0, 1.5),
-...                                (0.0, 1.5)))))
+...                               (0.0, 1.5)))))
 ... # doctest: +NORMALIZE_WHITESPACE
 [True False]
 
