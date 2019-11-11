@@ -107,11 +107,8 @@ class PolygonRegion:
         ie[1] *= -1.0
         self._ie = np.ascontiguousarray(ie[::-1, :])
         # Set the internal data arrays read-only.
-        self.v.flags.writeable = False
-        self.lb.flags.writeable = False
-        self.ub.flags.writeable = False
-        self.e.flags.writeable = False
-        self._ie.flags.writeable = False
+        for array in (self.v, self.lb, self.ub, self.e, self._ie):
+            array.flags.writeable = False
 
     def __len__(self):
         return self.e.shape[-1]
