@@ -54,4 +54,21 @@ A polygon with a simple hole inside.
 0
 
 
+Notes
+-----
+
+The current implementation is a pure-Python one utilizing ``numpy``. The
+``winding_number()`` method does not use the ``if`` (branch) statement, which
+is costly in the Python code.  The implementation should work reasonably well
+for the usage pattern where the polygon region is fixed but the number of
+points to be tested for inclusion is large.
+
+In the context of SVG files, the definition for a point being "inside" the
+polygon based on the winding number corresponds to the ``nonzero`` option for
+the ``fill-rule`` attribute of ``<polygon>`` (and similar) elements.  `[MDN]`_
+The other rule, ``evenodd``, is equivalent to the "crossing number" rule
+described as an alternative definition in `[SUN]`_.
+
+
 .. _[SUN]: https://geomalgorithms.com/a03-_inclusion.html
+.. _[MDN]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule#nonzero
