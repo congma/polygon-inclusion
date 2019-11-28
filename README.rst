@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/congma/polygon-inclusion.svg?branch=master
+    :target: https://travis-ci.org/congma/polygon-inclusion
+
 Summary
 -------
 
